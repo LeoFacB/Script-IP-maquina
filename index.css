@@ -1,0 +1,30 @@
+
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./background.avif");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.caixa {
+    background-color: white;
+    width: 25vw;
+    height: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 38%;
+    top: 40%;
+    border-radius: 1em;
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
