@@ -1,5 +1,5 @@
 #! /bin/bash
-
+#Indentifica o apache na maquina, o desisnstala e instala a versão mais recente.
 install_httpd_php()
 {
     systemctl start httpd
@@ -16,11 +16,13 @@ install_httpd_php()
     fi
 }
 
+# Cria o vhost para o site e configura o nome do site e a localização da pasta.
 vhost_creation()
 {
     echo -e "<VirtualHost *:80>\n   ServerName www.$HOSTNAME.com\n   DocumentRoot "/var/www/html/$HOSTNAME.com"\n</VirtualHost>" >> /etc/httpd/conf.d/"$HOSTNAME".com.conf
 }
 
+# Cria os diretórios do site e puxa de etc/content o conteudo do site
 create_dir()
 {
     mkdir /var/www/html/"$HOSTNAME".com
@@ -29,6 +31,7 @@ create_dir()
     cp /etc/content/. /var/www/html/"$HOSTNAME".com
 }
 
+# Configura o firewall e o arquivo etc/hosts
 firewalld_config()
 {
     firewall-cmd --permanent --zone=public --add-port=80/tcp

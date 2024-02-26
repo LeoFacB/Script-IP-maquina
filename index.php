@@ -15,6 +15,7 @@
 
 
     <body>
+        <!-- Titulo da pagina -->
         <div class="titulo">
             <h1 style="color:white">Qual é o ip da máquina?</h1>
         </div>
