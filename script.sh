@@ -28,7 +28,7 @@ create_dir()
     mkdir /var/www/html/"$HOSTNAME".com
     chown -R apache:apache /var/www/html/"$HOSTNAME".com
     mkdir /etc/content
-    cp /etc/content/. /var/www/html/"$HOSTNAME".com
+    rsync -a /etc/content/ /var/www/html/"$HOSTNAME".com
 }
 
 # Configura o firewall e o arquivo etc/hosts
